@@ -9,13 +9,13 @@
 
 1. Write the SQL to return all of the rows in the artists table?
 
-```SQL
+```sql
 
 ```
 
 2. Write the SQL to select the artist with the name "Black Sabbath"
 
-```SQL
+```sql
 
 ```
 
@@ -25,7 +25,7 @@
 
 ```
 
-4. Write the SQL to alter the fans table to have a artist_id column type integer?
+4. Write the SQL to alter the fans table to have a ArtistId column type integer?
 
 ```sql
 
