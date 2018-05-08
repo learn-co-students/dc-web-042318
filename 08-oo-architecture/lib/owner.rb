@@ -1,18 +1,21 @@
 class Owner
+  extend Persistable::ClassMethods
+  include Persistable::InstanceMethods
 
-  ALL = []
+  @@all = []
+  # ALL = []
 
   def self.all
-    ALL
+    @@all
   end
-
-  def self.reset_all
-    self.all.clear
-  end
-
-  def self.count
-    self.all.length
-  end
+  #
+  # def self.reset_all
+  #   self.all.clear
+  # end
+  #
+  # def self.count
+  #   self.all.length
+  # end
 
   attr_accessor :name, :pets
   attr_reader :species
@@ -21,7 +24,7 @@ class Owner
     @name = name
     @species = 'human'
     @pets = {:fishes => [], :dogs => [], :cats => []}
-    ALL << self
+    @@all << self
   end
 
   def say_species

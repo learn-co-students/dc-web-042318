@@ -1,6 +1,6 @@
 class Tweet
 
-	attr_reader :message, :user, :all
+	attr_reader :message, :user
 
 	@@all = []
 
