@@ -19,4 +19,15 @@ class ApplicationController < Sinatra::Base
 		erb :hello
 	end
 
+	set :views, "app/views"
+
+	get "/" do
+		erb :hello
+	end
+
+	get "/:name" do
+		@name = params[:name]
+		erb :hello
+	end
+
 end
