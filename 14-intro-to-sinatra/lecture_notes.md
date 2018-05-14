@@ -61,6 +61,8 @@ get "/:name" do
 end
 
 will trigger path error
+top of ApplicationController
+`set :views, "app/views"`
 Connect SQL to HTTP methods to CRUD
 Introduce REST
 	-REpresentational State Transfer
