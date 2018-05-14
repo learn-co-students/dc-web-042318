@@ -57,7 +57,7 @@ class CLI
       puts 'No book with that id was found'
     end
   end
-  
+
   def welcome
     'Welcome to the Library Searcher'
   end
@@ -65,6 +65,9 @@ class CLI
   private
 
   def seed_db
+    # call google api
+    # get books
+    # persist to database
     Adapter::GoogleBooks.new.fetch_books
   end
 
