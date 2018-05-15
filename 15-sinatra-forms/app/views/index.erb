@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All the books</title>
+</head>
+<body>
+
+
+	<ul>
+	<% @books.each do |book| %>
+		<li><a href="/books/<%= book.id %>"><%= book.title %></a> by <%= book.author_titlecase %></li>
+	<% end %>
+	</ul>
+</body>
+</html>
