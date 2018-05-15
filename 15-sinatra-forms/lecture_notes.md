@@ -5,7 +5,9 @@
 -Build out CRUD app
 	-Build "/" in Application Controller
 		-show request object
+
 	-Build Book database (migrate and seed)
+	
 	-Show all book page
 		-Build bookscontroller
 		-add `use BooksController` to config.ru
