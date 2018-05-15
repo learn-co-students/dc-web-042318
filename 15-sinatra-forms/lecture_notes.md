@@ -26,5 +26,6 @@
 		- add name to input type
 		- show creation of a few books
 		- change to create(params)
+		
 	-Edit book page
 
