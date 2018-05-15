@@ -1,12 +1,9 @@
 class ApplicationController < Sinatra::Base
 
-  configure do
-    # set :public_folder, 'public'
-    set :views, 'app/views'
-  end
+  set :views, 'app/views'
 
   get '/' do
-    erb :welcome
+    "Hello World"
   end
 
 end
