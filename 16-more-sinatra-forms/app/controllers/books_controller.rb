@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
 
+  set :views, 'app/views/books'
+
   get "/books" do
-    #s show information for all books
+    # show information for all books
     @books = Book.all
     erb :index
   end
@@ -27,5 +29,22 @@ class BooksController < ApplicationController
     erb :show
   end
 
+  get "/books/:id/edit" do
+    # show the book form
+    @book = Book.find(params[:id])
+    erb :edit
+  end
+
+  patch "/books/:id" do
+    @book = Book.find(params[:id])
+    @book.update(params[:book])
+    redirect("/books/#{@book.id}")
+  end
+
+  delete "/books/:id" do
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect("/books")
+  end
 
 end
