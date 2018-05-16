@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   get "/books" do
+    #s show information for all books
     @books = Book.all
     erb :index
   end
@@ -10,7 +11,7 @@ class BooksController < ApplicationController
     # author = params[:author]
     # title = params[:title]
     # snippet = params[:snippet]
-    book = Book.create(params)
+    Book.create(params)
     redirect("/books")
   end
 
@@ -18,8 +19,13 @@ class BooksController < ApplicationController
     # show empty form for book creation
     erb :new
   end
-  
 
+  get "/books/:id" do
+    # show information for a single book
+    id = params[:id]
+    @book = Book.find(id)
+    erb :show
+  end
 
 
 end
