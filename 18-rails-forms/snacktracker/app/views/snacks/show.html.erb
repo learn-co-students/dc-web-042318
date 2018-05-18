@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A delicious snack</title>
+</head>
+<body>
+	<h1><%= @snack.name %></h1>
+	<h2><%= @snack.calories %> calories </h2>
+	<h2>Deliciousness: <%= @snack.deliciousness %></h2>
+    <%= link_to "Edit", edit_snack_url(@snack) %>
+
+    <%= form_tag @snack, method: "DELETE" do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
+</body>
+</html>

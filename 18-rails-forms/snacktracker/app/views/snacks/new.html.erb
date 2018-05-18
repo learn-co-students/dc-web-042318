@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Make a new snack!</title>
+</head>
+<body>
+	<h1>New Snack:</h1>
+	<%= form_for @snack do |b| %>
+		<%= b.label :name %>
+		<%= b.text_field :name %>
+		<%= b.label :calories %>
+		<%= b.number_field :calories %>
+		<%= b.label :deliciousness %>
+		<%= b.select :deliciousness, (1..10) %>
+		<%= b.submit "Snackify" %>
+	<% end %>
+</body>
+</html>
