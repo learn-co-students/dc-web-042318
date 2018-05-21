@@ -5,6 +5,21 @@
 <%= f.number_field :calories %>
 <%= f.label :deliciousness %>
 <%= f.select :deliciousness, (1..10) %>
+<%= f.label :retailer_id %>
+<%= f.collection_select(:retailer_id, Retailer.all, :id, :name, prompt: true) %>
+
+<%= fields_for :retailer do |r| %>
+    <div>
+        <h3> New Retailer </h3>
+            <%= r.label :name %>
+            <%= r.text_field :name %>
+            <%= r.label :year_established %>
+            <%= r.number_field :year_established %>
+            <%= r.label :country %>
+            <%= r.text_field :country %>
+    </div>
+<% end %>
+
 <%= f.submit "Make this snack" %>
 
 <% end %>

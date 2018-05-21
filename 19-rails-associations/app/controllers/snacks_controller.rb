@@ -11,9 +11,11 @@ class SnacksController < ApplicationController
 
     def new
         @snack = Snack.new
+        @snack.build_retailer()
     end
 
     def create
+        byebug
         @snack = Snack.create(get_snack_params)
         redirect_to @snack
     end
@@ -35,7 +37,8 @@ class SnacksController < ApplicationController
     private
 
     def get_snack_params
-        params.require(:snack).permit(:name, :deliciousness, :calories)
+        params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id,
+            retailer_attributes: [:name, :year_established, :country])
     end
 
     def find_snack

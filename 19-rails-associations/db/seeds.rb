@@ -7,5 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6},
-                       {name: "Chicken fingers", calories: 650, deliciousness: 8}])
+retailers = Retailer.create([{name: "Hostess", year_established: 1929, country: "USA"},
+                             {name: "Girl Scouts", year_established: 1944, country: "USA"}])
+
+snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, retailer_id: 1},
+                       {name: "Chicken fingers", calories: 650, deliciousness: 8, retailer_id: 2}])

@@ -7,6 +7,7 @@
     <h1><%= @snack.name %></h1>
     <div><%= @snack.calories %> calories </div>
     <div>Deliciousness: <%= @snack.deliciousness %></div>
+    <div>Retailer: <%= @snack.retailer.name %></div>
 
     <%= link_to "Index", snacks_path %>
     <%= link_to "Edit", edit_snack_path %>
