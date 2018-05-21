@@ -1,7 +1,7 @@
 lecture_notes.md
 
--`rails new snack-tracker`
--`rails g model Snack name calories:integer deliciousness:integer`
+- `rails new snack-tracker`
+- `rails g model Snack name calories:integer deliciousness:integer`
 	- Look at what it's built
 		-model
 		-migration
