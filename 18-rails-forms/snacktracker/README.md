@@ -10,7 +10,6 @@ Intro to Forms
 	* `form_tag` vs `form_for`
 	* Mass assignment
 		- Strong Params
-	* Partials
 
 Intro to Validations
 	* Why use validations?
