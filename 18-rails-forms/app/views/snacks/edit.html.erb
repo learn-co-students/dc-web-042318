@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Snack</title>
+</head>
+<body>
+    <h1>Edit this snack</h1>
+
+    <%= render "snack_form" %>
+
+    <%= form_tag @snack, method: "DELETE" do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
+</body>
+</html>
