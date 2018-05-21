@@ -8,7 +8,7 @@
 <%= f.label :retailer_id %>
 <%= f.collection_select(:retailer_id, Retailer.all, :id, :name, prompt: true) %>
 
-<%= fields_for :retailer do |r| %>
+<%= f.fields_for :retailer do |r| %>
     <div>
         <h3> New Retailer </h3>
             <%= r.label :name %>

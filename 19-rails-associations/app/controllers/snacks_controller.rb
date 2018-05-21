@@ -37,8 +37,7 @@ class SnacksController < ApplicationController
     private
 
     def get_snack_params
-        params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id,
-            retailer_attributes: [:name, :year_established, :country])
+        params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id, retailer_attributes: [:name, :year_established, :country])
     end
 
     def find_snack
