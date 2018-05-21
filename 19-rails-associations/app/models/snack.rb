@@ -1,2 +1,0 @@
-class Snack < ApplicationRecord
-end
