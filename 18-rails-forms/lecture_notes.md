@@ -10,8 +10,9 @@ lecture_notes.md
 -`rails db:migrate`
 	- show schema
 		- null: false
+- build some seed data
 - Review RESTful routes (index, show, edit, create, new, update, destroy)
-	- `resources :snack, only [:index]`
+	- `resources :snacks, only: [:index]`
 		- start with the ones we need
 - app/controller/snacks_controller.rb
 	resources :snacks, only [:index]
@@ -44,14 +45,14 @@ end
 		- both include csrf validation.  Before defining fields, show the form (with all hidden fields) in the inspector
 ```
 <h1>New Snack:</h1>
-<%= form_for @snack do |b| %>
-	<%= b.label :name %>
-	<%= b.text_field :name %>
-	<%= b.label :calories %>
-	<%= b.number_field :calories %>
-	<%= b.label :deliciousness %>
-	<%= b.select :deliciousness, (1..10) %>
-	<%= b.submit "Snackify" %>
+<%= form_for @snack do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :calories %>
+	<%= f.number_field :calories %>
+	<%= f.label :deliciousness %>
+	<%= f.select :deliciousness, (1..10) %>
+	<%= f.submit "Snackify" %>
 <% end %>
 ```
 
@@ -61,9 +62,17 @@ end
 	- Security risk
 		- Mass assignment, can put in bad code
 		- https://xkcd.com/327/
-
+```
+    def create
+        @snack = Snack.create(params.require(:snack).permit(:name, :deliciousness, :calories))
+        redirect_to @snack
+    end
+```
+n@
 - add :update and :edit to routes
 - edit.html.erb matches new.html.erb
+    - move form into `_snack_form.html.erb`
+    - `<%= render "snack_form" %>`
 - add link from detail page to edit page
     - `<%= link_to "Edit", edit_snack_url(@snack) %>`
 - add link on index page to show page
@@ -83,5 +92,11 @@ end
     def destroy
         Snack.destroy(params[:id])
         redirect_to snacks_path
+    end
+```
+
+- `before_action :find_snack, only: [:edit, :update, :show]`
+```def find_snack
+        @snack = snack.find(params[:id])
     end
 ```
