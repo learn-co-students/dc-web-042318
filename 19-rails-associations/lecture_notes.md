@@ -56,6 +56,7 @@ snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, ret
     - `        params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id, retailer_attributes: [:name, :year_established, :country])
 `
 
+Build from the other direction:
 
 retailer.rb
 
@@ -66,7 +67,6 @@ class Retailer < ApplicationRecord
 end
 ```
 
-Build from the other direction:
 
 ```
 class Retailer < ApplicationRecord
