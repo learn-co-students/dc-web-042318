@@ -12,7 +12,7 @@
 - seeds.rb
 
 ```retailers = Retailer.create([{name: "Hostess", year_established: 1929},
-                             {name: "Girl Scouts", year_established: 1944}])
+                                {name: "Girl Scouts", year_established: 1944}])
 
 snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, retailer_id: 1},
                        {name: "Chicken fingers", calories: 650, deliciousness: 8, retailer_id: 2}])
@@ -26,7 +26,6 @@ snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, ret
 - add belongs_to and has_many to models
 ```belongs_to :retailer```
 
-
 - "How should we include retailers on our snack page?" (Elicit dropdown)
 
 ```<%= f.collection_select(:retailer_id, Retailer.all, :id, :name, prompt: true) %>```
@@ -34,7 +33,8 @@ snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, ret
 - Will not create until added to required_params - add in retailer_id
 
 - Create new retailer in Snack Form
-- ```accepts_nested_attributes_for :retailer``` i.e., auto-creates the new retailer
+- ```accepts_nested_attributes_for :retailer``` at top of Snack model 
+    - auto-creates the new retailer
 - SnacksController#new 
     - `@snack.build_retailer()` (builds stub for retailer)
 ```
@@ -56,7 +56,6 @@ snacks = Snack.create([{name: "Thin Mints", calories: 200, deliciousness: 6, ret
     - `        params.require(:snack).permit(:name, :deliciousness, :calories, :retailer_id, retailer_attributes: [:name, :year_established, :country])
 `
 
-- From other direction:
 
 retailer.rb
 
@@ -67,10 +66,14 @@ class Retailer < ApplicationRecord
 end
 ```
 
-- retailers.controller
+Build from the other direction:
 
 ```
-class RetailersController < ApplicationController
+class Retailer < ApplicationRecord
+    has_many :snacks
+    accepts_nested_attributes_for :snacks
+end```
+
   def index
     @retailers = Retailer.all
   end
