@@ -1,3 +1,5 @@
+** Remind there is a code challenge **
+
 - Build Retailer model
     - Retailer has many snacks
     - Snacks belongs_to retailer
