@@ -11,6 +11,7 @@ class SnacksController < ApplicationController
 
     def new
         @snack = Snack.new
+        @retailer = @snack.build_retailer
     end
 
     def create
@@ -35,7 +36,9 @@ class SnacksController < ApplicationController
     private
 
     def get_snack_params
-        params.require(:snack).permit(:name, :deliciousness, :calories)
+        params.require(:snack).permit(
+            :name, :deliciousness, :calories, :retailer_id,
+            retailer_attributes: [:name, :year_established])
     end
 
     def find_snack
