@@ -1,0 +1,2091 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSnacks (20180521143948)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "snacks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "calories" integer, "deliciousness" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180521143948_create_snacks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180521143948"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-21 14:41:24.225829"], ["updated_at", "2018-05-21 14:41:24.225829"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSnack Create (0.6ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thin Mints"], ["calories", 200], ["deliciousness", 6], ["created_at", "2018-05-21 14:45:14.787487"], ["updated_at", "2018-05-21 14:45:14.787487"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mSnack Create (0.3ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chicken fingers"], ["calories", 650], ["deliciousness", 8], ["created_at", "2018-05-21 14:45:14.791107"], ["updated_at", "2018-05-21 14:45:14.791107"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+Started GET "/" for 127.0.0.1 at 2018-05-21 10:50:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 35ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 10:50:06 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:10
+  Rendered snacks/index.html.erb within layouts/application (21.2ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+     8:     <h1>I love snacks</h1>
+     9: 
+    10:     <% @snacks.each do |snack| %>
+    11:         <%= snack.name snack.calories snack.deliciousness %>
+    12:     <% end %>
+    13: 
+    14: </body>
+  
+app/views/snacks/index.html.erb:11:in `block in _app_views_snacks_index_html_erb___1882779766140134730_70305055362160'
+app/views/snacks/index.html.erb:10:in `_app_views_snacks_index_html_erb___1882779766140134730_70305055362160'
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 10:50:38 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:10
+  Rendered snacks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 291ms (Views: 285.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 10:51:11 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 10:54:07 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"snacks"}, missing required keys: [:id]):
+     9: 
+    10:     <ul>
+    11:     <% @snacks.each do |snack| %>
+    12:         <li><%= link_to "#{snack.name} | #{snack.calories} | #{snack.deliciousness}", snack_path %></li>
+    13:     <% end %>
+    14:     </ul>
+    15: </body>
+  
+app/views/snacks/index.html.erb:12:in `block in _app_views_snacks_index_html_erb___1882779766140134730_70305093103500'
+app/views/snacks/index.html.erb:11:in `_app_views_snacks_index_html_erb___1882779766140134730_70305093103500'
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 10:54:55 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-21 10:55:08 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4:     <title>This is a snack</title>
+    5: </head>
+    6: <body>
+    7:     <h1><%= @snack.name %></h1>
+    8:     <div><%= @snack.calories %> calories </div>
+    9:     <div>Deliciousness: <%= @snack.deliciousness %></div>
+   10: </body>
+  
+app/views/snacks/show.html.erb:7:in `_app_views_snacks_show_html_erb___2302772545186013384_70305047898460'
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-21 10:55:26 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 47ms (Views: 30.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-21 10:56:19 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 45.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 10:56:21 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.3ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 10:59:42 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/app/views/snacks/new.html.erb:18: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                               ^
+/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/app/views/snacks/new.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/app/views/snacks/new.html.erb:25: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/snacks/new.html.erb:18: syntax error, unexpected keyword_end
+app/views/snacks/new.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/snacks/new.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 10:59:53 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 61ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:00:33 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 49ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:00:35 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:00:46 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (257.9ms)
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `number' for #<ActionView::Helpers::FormBuilder:0x007fe2568cf588>):
+    10:     <%= f.label :name %>
+    11:     <%= f.text_field :name %>
+    12:     <%= f.label :calories %>
+    13:     <%= f.number :calories %>
+    14:     <%= f.label :deliciousness %>
+    15:     <%= f.text_field :deliciousness %>
+    16:     <%= f.submit "Snackify" %>
+  
+app/views/snacks/new.html.erb:13:in `block in _app_views_snacks_new_html_erb___3250011808559088915_70305041878520'
+app/views/snacks/new.html.erb:9:in `_app_views_snacks_new_html_erb___3250011808559088915_70305041878520'
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:00:58 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:01:37 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-21 11:02:09 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u9s5QevUVeTIG8+8hETY4d7FBV8b5l429K0eUKVSyl3An7T5EOVNHptUR7vCWGEx67cXrFbIZ3GzFvMHZH22Sw==", "snack"=>{"name"=>"Cheetos", "calories"=>"270", "deliciousness"=>"1"}, "commit"=>"Snackify"}
+No template found for SnacksController#create, rendering head :no_content
+Completed 204 No Content in 284837ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:06:54 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 69ms (Views: 42.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:06:58 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-21 11:07:04 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7aGyRGKYkQy24wamgzh+Jhz62NfTTbpbSHESBVzDan2W5T/8mamJ9uWsjqHFJMf2KYjKJJ5jgxwPyv9SnewWaw==", "snack"=>{"name"=>"Cheetos", "calories"=>"270", "deliciousness"=>"1"}, "commit"=>"Snackify"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/snacks_controller.rb:16:in `create'
+Started POST "/snacks" for 127.0.0.1 at 2018-05-21 11:08:27 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7aGyRGKYkQy24wamgzh+Jhz62NfTTbpbSHESBVzDan2W5T/8mamJ9uWsjqHFJMf2KYjKJJ5jgxwPyv9SnewWaw==", "snack"=>{"name"=>"Cheetos", "calories"=>"270", "deliciousness"=>"1"}, "commit"=>"Snackify"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[36mSnack Create (0.7ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cheetos"], ["calories", 270], ["deliciousness", 1], ["created_at", "2018-05-21 15:08:27.883015"], ["updated_at", "2018-05-21 15:08:27.883015"]]
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+Redirected to http://localhost:3000/snacks/3
+Completed 302 Found in 24ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/snacks/3" for 127.0.0.1 at 2018-05-21 11:08:27 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:08:32 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.6ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 34.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:09:22 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:09:24 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:12:03 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (2.7ms)
+  Rendered snacks/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 45ms (Views: 33.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:12:17 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (2.1ms)
+  Rendered snacks/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:12:24 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.3ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:12:26 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/3" for 127.0.0.1 at 2018-05-21 11:12:28 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.3ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snacks/3/edit" for 127.0.0.1 at 2018-05-21 11:12:31 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:22
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (2.3ms)
+  Rendered snacks/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 36ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/3/edit" for 127.0.0.1 at 2018-05-21 11:14:00 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:21
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (3.0ms)
+  Rendered snacks/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 50ms (Views: 34.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/snacks/3" for 127.0.0.1 at 2018-05-21 11:14:11 -0400
+Processing by SnacksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ejl/kyVIS5Kl1F6ygvKq8dN2SIgr8sSvl8VsFuW+QRVpffIr3nlTaPab1rXE7hMh5gRae2bc/ejQfoFBJJE9Aw==", "snack"=>{"name"=>"Cheeto Poofs", "calories"=>"270", "deliciousness"=>"2"}, "commit"=>"Make this snack", "id"=>"3"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:26
+  [1m[36mSnack Update (1.1ms)[0m  [1m[33mUPDATE "snacks" SET "name" = ?, "deliciousness" = ?, "updated_at" = ? WHERE "snacks"."id" = ?[0m  [["name", "Cheeto Poofs"], ["deliciousness", 2], ["updated_at", "2018-05-21 15:14:11.702874"], ["id", 3]]
+  ↳ app/controllers/snacks_controller.rb:26
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:26
+Redirected to http://localhost:3000/snacks/3
+Completed 302 Found in 15ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/snacks/3" for 127.0.0.1 at 2018-05-21 11:14:11 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/3/edit" for 127.0.0.1 at 2018-05-21 11:15:58 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.4ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:21
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (4.3ms)
+  Rendered snacks/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 55ms (Views: 37.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/snacks/3/edit" for 127.0.0.1 at 2018-05-21 11:16:37 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:21
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (3.2ms)
+  Rendered snacks/edit.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 55ms (Views: 38.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/snacks/3" for 127.0.0.1 at 2018-05-21 11:16:38 -0400
+Processing by SnacksController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Ebf4/ehWXnwci+jO13MyGvVtLSHSBYnTAoaigYv02GjAlJbDJBBg6M9p6R9QXUYXqemR8pmL2ALsffdxwCvdw==", "commit"=>"Delete", "id"=>"3"}
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `id' for #<SnacksController:0x007fe25ccf45b8>):
+  
+app/controllers/snacks_controller.rb:32:in `destroy'
+Started DELETE "/snacks/3" for 127.0.0.1 at 2018-05-21 11:16:51 -0400
+Processing by SnacksController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Ebf4/ehWXnwci+jO13MyGvVtLSHSBYnTAoaigYv02GjAlJbDJBBg6M9p6R9QXUYXqemR8pmL2ALsffdxwCvdw==", "commit"=>"Delete", "id"=>"3"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:32
+  [1m[36mSnack Destroy (0.4ms)[0m  [1m[31mDELETE FROM "snacks" WHERE "snacks"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/snacks_controller.rb:32
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:32
+Redirected to http://localhost:3000/snacks
+Completed 302 Found in 16ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:16:51 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-21 11:16:54 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-21 11:17:24 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/2/edit" for 127.0.0.1 at 2018-05-21 11:17:26 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:21
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (2.3ms)
+  Rendered snacks/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 39ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/snacks/2" for 127.0.0.1 at 2018-05-21 11:17:27 -0400
+Processing by SnacksController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YRyGv0YcOd79sQCC4Fpi+qDjuC7Yf2F3Tp9cF9gelrZ181HOVDc6FUCBJ8fXx6N1RW/OzWCAo3VStbpKNdF3TA==", "commit"=>"Delete", "id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:32
+  [1m[36mSnack Destroy (0.4ms)[0m  [1m[31mDELETE FROM "snacks" WHERE "snacks"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/snacks_controller.rb:32
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:32
+Redirected to http://localhost:3000/snacks
+Completed 302 Found in 9ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:17:27 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.3ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:17:29 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (2.3ms)
+  Rendered snacks/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-21 11:17:37 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6vltPxccbLllY+UfaMfAPwCzV+qp/vw0IB0Ln2cqK9MJ82qLEb/JfkAHm80OMlLwnWSDxqXiSuo5CQ/iOiZwsw==", "snack"=>{"name"=>"Fruit Salad", "calories"=>"200", "deliciousness"=>"10"}, "commit"=>"Make this snack"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:16
+  [1m[36mSnack Create (0.6ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Fruit Salad"], ["calories", 200], ["deliciousness", 10], ["created_at", "2018-05-21 15:17:37.819821"], ["updated_at", "2018-05-21 15:17:37.819821"]]
+  ↳ app/controllers/snacks_controller.rb:16
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:16
+Redirected to http://localhost:3000/snacks/4
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/snacks/4" for 127.0.0.1 at 2018-05-21 11:17:37 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:8
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:18:50 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 40ms (Views: 32.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-21 11:18:53 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (3.7ms)
+  Rendered snacks/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-21 11:19:03 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QdYE/QxyNUObZVXO/B7vHmpUAV3tyl3bO/MnJyL1SHei3ANJCtGQhL4BKxya633R94PVceHW6wUi5yNaf/kTFw==", "snack"=>{"name"=>"Sliders", "calories"=>"500", "deliciousness"=>"7"}, "commit"=>"Make this snack"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[36mSnack Create (0.6ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sliders"], ["calories", 500], ["deliciousness", 7], ["created_at", "2018-05-21 15:19:03.033813"], ["updated_at", "2018-05-21 15:19:03.033813"]]
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+Redirected to http://localhost:3000/snacks/5
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/snacks/5" for 127.0.0.1 at 2018-05-21 11:19:03 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSnack Load (0.4ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snacks/5/edit" for 127.0.0.1 at 2018-05-21 11:19:05 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (12.8ms)
+  Rendered snacks/edit.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 59ms (Views: 53.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/snacks/5" for 127.0.0.1 at 2018-05-21 11:19:11 -0400
+Processing by SnacksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S5WNXFhaHtmn8uND0iFHvnu6d/yzjLrgBwQY0lEfJmIy2tCqVwiGH+LSsjpQwC8UFm7qAv1/BPyruGMJMOphBg==", "snack"=>{"name"=>"Sliders", "calories"=>"468", "deliciousness"=>"7"}, "commit"=>"Make this snack", "id"=>"5"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:25
+  [1m[36mSnack Update (0.8ms)[0m  [1m[33mUPDATE "snacks" SET "calories" = ?, "updated_at" = ? WHERE "snacks"."id" = ?[0m  [["calories", 468], ["updated_at", "2018-05-21 15:19:11.050472"], ["id", 5]]
+  ↳ app/controllers/snacks_controller.rb:25
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:25
+Redirected to http://localhost:3000/snacks/5
+Completed 302 Found in 9ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/snacks/5" for 127.0.0.1 at 2018-05-21 11:19:11 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/5/edit" for 127.0.0.1 at 2018-05-21 11:19:13 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (3.0ms)
+  Rendered snacks/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 50ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/snacks/5" for 127.0.0.1 at 2018-05-21 11:19:14 -0400
+Processing by SnacksController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KiShRl56lq1ssTzKBqG+WqrBHwj66f/KPZlnN105FAZ9LUOmzaKRceZHL6RxrFTVs0uE6mmi6KutUCAjKHlrPA==", "commit"=>"Delete", "id"=>"5"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:31
+  [1m[36mSnack Destroy (0.3ms)[0m  [1m[31mDELETE FROM "snacks" WHERE "snacks"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/snacks_controller.rb:31
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:31
+Redirected to http://localhost:3000/snacks
+Completed 302 Found in 7ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-21 11:19:14 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/4" for 127.0.0.1 at 2018-05-21 13:12:08 -0400
+  
+LoadError (cannot load such file -- /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/config/routes.rb):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-05-21 13:12:08 -0400
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:50:in `load'
+bootsnap (1.3.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:50:in `load'
+activesupport (5.2.0) lib/active_support/dependencies.rb:277:in `block in load'
+activesupport (5.2.0) lib/active_support/dependencies.rb:249:in `load_dependency'
+activesupport (5.2.0) lib/active_support/dependencies.rb:277:in `load'
+railties (5.2.0) lib/rails/application/routes_reloader.rb:57:in `block in load_paths'
+railties (5.2.0) lib/rails/application/routes_reloader.rb:57:in `each'
+railties (5.2.0) lib/rails/application/routes_reloader.rb:57:in `load_paths'
+railties (5.2.0) lib/rails/application/routes_reloader.rb:20:in `reload!'
+railties (5.2.0) lib/rails/application/routes_reloader.rb:43:in `block in updater'
+activesupport (5.2.0) lib/active_support/file_update_checker.rb:83:in `execute'
+railties (5.2.0) lib/rails/application/routes_reloader.rb:27:in `execute'
+railties (5.2.0) lib/rails/application/finisher.rb:143:in `block (2 levels) in <module:Finisher>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `instance_exec'
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:606:in `block (2 levels) in default_terminator'
+activesupport (5.2.0) lib/active_support/callbacks.rb:605:in `catch'
+activesupport (5.2.0) lib/active_support/callbacks.rb:605:in `block in default_terminator'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+activesupport (5.2.0) lib/active_support/execution_wrapper.rb:110:in `run!'
+activesupport (5.2.0) lib/active_support/reloader.rb:115:in `run!'
+activesupport (5.2.0) lib/active_support/execution_wrapper.rb:72:in `block in run!'
+activesupport (5.2.0) lib/active_support/execution_wrapper.rb:69:in `tap'
+activesupport (5.2.0) lib/active_support/execution_wrapper.rb:69:in `run!'
+activesupport (5.2.0) lib/active_support/reloader.rb:64:in `run!'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-21 13:47:17 -0400
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-05-21 13:47:18 -0400
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-21 13:47:36 -0400
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-05-21 13:47:37 -0400
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-21 13:47:39 -0400
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-05-21 13:47:40 -0400
+  
+ActiveRecord::NoDatabaseError (No such file or directory @ dir_s_mkdir - /Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/18-rails-forms/snack-tracker/db):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:42:in `rescue in sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/sqlite3_adapter.rb:19:in `sqlite3_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-05-22 13:25:05 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (4.7ms)
+Completed 200 OK in 29ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:25:10 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.6ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 233ms (Views: 224.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/snacks/1" for 127.0.0.1 at 2018-05-22 13:25:17 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnack Load (0.4ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 39ms (Views: 23.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snacks/1/edit" for 127.0.0.1 at 2018-05-22 13:25:21 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (22.5ms)
+  Rendered snacks/edit.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 57ms (Views: 49.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/snacks/1" for 127.0.0.1 at 2018-05-22 13:25:25 -0400
+Processing by SnacksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pdgZYcvAVyaycSMAWiVNeiT5AjDhEBoA/CNzLqstkW3a7w5oxg76kuEKHkifIHTnJIrMxF16Ncqy/NaK7VTaxg==", "snack"=>{"name"=>"Thin Mints", "calories"=>"200", "deliciousness"=>"9"}, "commit"=>"Make this snack", "id"=>"1"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:25
+  [1m[36mSnack Update (0.4ms)[0m  [1m[33mUPDATE "snacks" SET "deliciousness" = ?, "updated_at" = ? WHERE "snacks"."id" = ?[0m  [["deliciousness", 9], ["updated_at", "2018-05-22 17:25:25.739217"], ["id", 1]]
+  ↳ app/controllers/snacks_controller.rb:25
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:25
+Redirected to http://localhost:3000/snacks/1
+Completed 302 Found in 10ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/snacks/1" for 127.0.0.1 at 2018-05-22 13:25:25 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:25:27 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:25:28 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (1.7ms)
+  Rendered snacks/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 38ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-22 13:25:36 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Cv8ao2w8yp5HdYDSyCsb4HH+DBCyLbqajxk6oAfpVtXl3EAJQbT+hBtHed+Hhwn1bqkCw2iQpAnORlGqXAZ5g==", "snack"=>{"name"=>"Sliders", "calories"=>"400", "deliciousness"=>"5"}, "commit"=>"Make this snack"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[36mSnack Create (0.7ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sliders"], ["calories", 400], ["deliciousness", 5], ["created_at", "2018-05-22 17:25:36.812851"], ["updated_at", "2018-05-22 17:25:36.812851"]]
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+Redirected to http://localhost:3000/snacks/6
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/snacks/6" for 127.0.0.1 at 2018-05-22 13:25:36 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/snacks/6/edit" for 127.0.0.1 at 2018-05-22 13:25:38 -0400
+Processing by SnacksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/edit.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (2.8ms)
+  Rendered snacks/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 45ms (Views: 37.6ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/snacks/6" for 127.0.0.1 at 2018-05-22 13:25:39 -0400
+Processing by SnacksController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1dy4JehGLxH9jNiYjrGznVCZww5Ly4F4RzmxU6nkzL/oM1tUBtAhmps304l7QbR7t+owcBWGXEzzFf/3G+x8AA==", "commit"=>"Delete", "id"=>"6"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:31
+  [1m[36mSnack Destroy (0.4ms)[0m  [1m[31mDELETE FROM "snacks" WHERE "snacks"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/snacks_controller.rb:31
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:31
+Redirected to http://localhost:3000/snacks
+Completed 302 Found in 7ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:25:39 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "snacks"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "snacks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "calories" integer, "deliciousness" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180521143948)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-22 17:29:50.158229"], ["updated_at", "2018-05-22 17:29:50.158229"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "snacks"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "snacks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "calories" integer, "deliciousness" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180521143948)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-22 17:29:50.177234"], ["updated_at", "2018-05-22 17:29:50.177234"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-22 17:29:50.181120"], ["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRetailers (20180522172743)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180522172743_create_retailers.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "retailers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "year_established" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180522172743_create_retailers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180522172743"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddRetailerToSnacks (20180522173101)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "snacks" ADD "retailer_id" integer[0m
+  ↳ db/migrate/20180522173101_add_retailer_to_snacks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180522173101"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "retailers"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "retailers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "year_established" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "snacks"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "snacks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "calories" integer, "deliciousness" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "retailer_id" integer)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180522173101)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180522172743),
+(20180521143948);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-22 17:32:40.156370"], ["updated_at", "2018-05-22 17:32:40.156370"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "retailers"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "retailers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "year_established" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "snacks"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "snacks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "calories" integer, "deliciousness" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "retailer_id" integer)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180522173101)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180522172743),
+(20180521143948);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-22 17:32:40.178748"], ["updated_at", "2018-05-22 17:32:40.178748"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-05-22 17:32:40.183663"], ["key", "environment"]]
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRetailer Create (0.5ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hostess"], ["year_established", 1929], ["created_at", "2018-05-22 17:32:40.197900"], ["updated_at", "2018-05-22 17:32:40.197900"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRetailer Create (0.3ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Girl Scouts"], ["year_established", 1893], ["created_at", "2018-05-22 17:32:40.201463"], ["updated_at", "2018-05-22 17:32:40.201463"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSnack Create (0.3ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Thin Mints"], ["calories", 200], ["deliciousness", 6], ["created_at", "2018-05-22 17:32:40.216414"], ["updated_at", "2018-05-22 17:32:40.216414"], ["retailer_id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSnack Create (0.3ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chicken fingers"], ["calories", 650], ["deliciousness", 8], ["created_at", "2018-05-22 17:32:40.219117"], ["updated_at", "2018-05-22 17:32:40.219117"], ["retailer_id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/bin/rake:23
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:32:57 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/paul.nicholsen/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-22 13:33:00 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-22 13:33:25 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  Rendered snacks/show.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `retailer' for #<Snack:0x007f824e403198>
+Did you mean?  retailer_id):
+     7:     <h1><%= @snack.name %></h1>
+     8:     <div><%= @snack.calories %> calories </div>
+     9:     <div>Deliciousness: <%= @snack.deliciousness %></div>
+    10:     <div>Made by: <%= @snack.retailer.name %></div>
+    11: 
+    12:     <%= link_to "Index", snacks_path %>
+    13:     <%= link_to "Edit", edit_snack_path %>
+  
+app/views/snacks/show.html.erb:10:in `_app_views_snacks_show_html_erb___365012066293892068_70098817650340'
+Started GET "/snacks/2" for 127.0.0.1 at 2018-05-22 13:37:12 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:42
+  Rendering snacks/show.html.erb within layouts/application
+  [1m[36mRetailer Load (0.1ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/snacks/show.html.erb:10
+  Rendered snacks/show.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 64ms (Views: 45.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:37:31 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:37:32 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (3.1ms)
+  Rendered snacks/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 36ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:38:42 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  Rendered snacks/_snack_form.html.erb (0.6ms)
+  Rendered snacks/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/19-rails-associations/app/views/snacks/_snack_form.html.erb:9: syntax error, unexpected '<', expecting ')'
+<%= f.submit "Make this snack" );@output_buffer.safe_append='
+ ^
+/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/19-rails-associations/app/views/snacks/_snack_form.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/19-rails-associations/app/views/snacks/_snack_form.html.erb:13: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/19-rails-associations/app/views/snacks/_snack_form.html.erb:15: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/snacks/_snack_form.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/snacks/_snack_form.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+app/views/snacks/_snack_form.html.erb:13: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/snacks/_snack_form.html.erb:15: syntax error, unexpected keyword_end, expecting ')'
+app/views/snacks/new.html.erb:9:in `_app_views_snacks_new_html_erb__3990006552317220620_70098809422320'
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:38:52 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (17.2ms)
+  Rendered snacks/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:39:05 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (2.7ms)
+  Rendered snacks/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:39:15 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.3ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (4.2ms)
+  Rendered snacks/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-22 13:39:36 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S7QTQ/fIlKiOD2K8Zk4JTOacOY+gjmEWN1TWNdSh2vX7fg+e68c610WLOKVu0XEBapG+ZgAWfagUz9GF0Rxe+g==", "snack"=>{"name"=>"Dosidos", "calories"=>"500", "deliciousness"=>"5", "retailer_id"=>"2"}, "commit"=>"Make this snack"}
+Unpermitted parameter: :retailer_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+Redirected to http://localhost:3000/snacks
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:39:36 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:40:47 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:40:48 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.3ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (12.7ms)
+  Rendered snacks/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 43ms (Views: 37.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-22 13:40:56 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tc/yUNGwhQub50dUx/3u+DpWaHouiQc/pHAebK5uUOb2c386eQal2/KXjLDyw16wbis0QWHj80XpdWPAhwHsWw==", "snack"=>{"name"=>"Dosidos", "calories"=>"500", "deliciousness"=>"5", "retailer_id"=>"2"}, "commit"=>"Make this snack"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[36mSnack Create (0.3ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dosidos"], ["calories", 500], ["deliciousness", 5], ["created_at", "2018-05-22 17:40:56.393558"], ["updated_at", "2018-05-22 17:40:56.393558"], ["retailer_id", 2]]
+  ↳ app/controllers/snacks_controller.rb:17
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:17
+Redirected to http://localhost:3000/snacks/3
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/snacks/3" for 127.0.0.1 at 2018-05-22 13:40:56 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSnack Load (0.4ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:43
+  Rendering snacks/show.html.erb within layouts/application
+  [1m[36mRetailer Load (0.1ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/snacks/show.html.erb:10
+  Rendered snacks/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 13:41:05 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 30ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:41:11 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (2.7ms)
+  Rendered snacks/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:47:44 -0400
+Processing by SnacksController#new as HTML
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `accepts_nested_resources_for' for #<Class:0x007f824d5b5550>
+Did you mean?  accepts_nested_attributes_for):
+  
+app/models/snack.rb:3:in `<class:Snack>'
+app/models/snack.rb:1:in `<main>'
+app/controllers/snacks_controller.rb:13:in `new'
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:48:02 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (9.8ms)
+  Rendered snacks/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 43ms (Views: 30.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:49:19 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.1ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (3.9ms)
+  Rendered snacks/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 41ms (Views: 24.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:49:40 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (3.6ms)
+  Rendered snacks/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 42ms (Views: 24.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:50:15 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (4.4ms)
+  Rendered snacks/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 40ms (Views: 23.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:50:16 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (2.7ms)
+  Rendered snacks/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:50:25 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.1ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (3.7ms)
+  Rendered snacks/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 41ms (Views: 22.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-22 13:50:47 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kjDwe3qvY5OQ+bRQYS6qL5RZ2/RryNSA4S4VCc804QUi+uymZqDN7Ft97klpsdJiGFRcHctQyD7CtRK5yollCg==", "snack"=>{"name"=>"Doritos", "calories"=>"500", "deliciousness"=>"2", "retailer_id"=>"", "retailer_attributes"=>{"name"=>"Frito-Lay", "year_established"=>"1943"}}, "commit"=>"Make this snack"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[36mRetailer Create (1.3ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Frito-Lay"], ["year_established", 1943], ["created_at", "2018-05-22 17:51:45.514927"], ["updated_at", "2018-05-22 17:51:45.514927"]]
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[36mSnack Create (0.3ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Doritos"], ["calories", 500], ["deliciousness", 2], ["created_at", "2018-05-22 17:51:45.518479"], ["updated_at", "2018-05-22 17:51:45.518479"], ["retailer_id", 3]]
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:19
+Redirected to http://localhost:3000/snacks/4
+Completed 302 Found in 58505ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/snacks/4" for 127.0.0.1 at 2018-05-22 13:51:45 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSnack Load (0.3ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:46
+  Rendering snacks/show.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/snacks/show.html.erb:10
+  Rendered snacks/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/snacks/4" for 127.0.0.1 at 2018-05-22 13:52:01 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mSnack Load (0.1ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:46
+  Rendering snacks/show.html.erb within layouts/application
+  [1m[36mRetailer Load (0.1ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/snacks/show.html.erb:10
+  Rendered snacks/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/retailers" for 127.0.0.1 at 2018-05-22 13:53:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/retailers"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/retailers" for 127.0.0.1 at 2018-05-22 13:55:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/retailers"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/retailers" for 127.0.0.1 at 2018-05-22 13:55:43 -0400
+Processing by RetailersController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant RetailersController::Retailers):
+  
+app/controllers/retailers_controller.rb:4:in `index'
+Started GET "/retailers" for 127.0.0.1 at 2018-05-22 13:55:52 -0400
+Processing by RetailersController#index as HTML
+  Rendering retailers/index.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/retailers/index.html.erb:1
+  Rendered retailers/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 165ms (Views: 158.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/snacks/new" for 127.0.0.1 at 2018-05-22 13:56:44 -0400
+Processing by SnacksController#new as HTML
+  Rendering snacks/new.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/snacks/_snack_form.html.erb:8
+  Rendered snacks/_snack_form.html.erb (5.3ms)
+  Rendered snacks/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 46ms (Views: 31.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/snacks" for 127.0.0.1 at 2018-05-22 13:57:19 -0400
+Processing by SnacksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EnWdBGVpr6aTNjvtb3HM3p+SFCKdhiIhDdEu2WhcRmCiv4HZeWYB2ViyYfRn7rSTE5+Tyz0ePp8uSilpbeHCbw==", "snack"=>{"name"=>"Wonka Bars", "calories"=>"2000", "deliciousness"=>"8", "retailer_id"=>"1", "retailer_attributes"=>{"name"=>"Wonka", "year_established"=>"1900"}}, "commit"=>"Make this snack"}
+  [1m[36mRetailer Load (0.4ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[36mRetailer Create (0.8ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Wonka"], ["year_established", 1900], ["created_at", "2018-05-22 17:57:43.969919"], ["updated_at", "2018-05-22 17:57:43.969919"]]
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[36mSnack Create (0.2ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Wonka Bars"], ["calories", 2000], ["deliciousness", 8], ["created_at", "2018-05-22 17:57:43.973636"], ["updated_at", "2018-05-22 17:57:43.973636"], ["retailer_id", 4]]
+  ↳ app/controllers/snacks_controller.rb:19
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/snacks_controller.rb:19
+Redirected to http://localhost:3000/snacks/5
+Completed 302 Found in 24250ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/snacks/5" for 127.0.0.1 at 2018-05-22 13:57:43 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:46
+  Rendering snacks/show.html.erb within layouts/application
+  [1m[36mRetailer Load (0.1ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/snacks/show.html.erb:10
+  Rendered snacks/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/retailer/new" for 127.0.0.1 at 2018-05-22 14:01:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/retailer/new"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:01:16 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 25.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:02:17 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/19-rails-associations/app/views/retailers/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/paul.nicholsen/Development/code/flatiron/batch_specific_lecture_code/dc-web-042318/19-rails-associations/app/views/retailers/new.html.erb:10: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/retailers/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/retailers/new.html.erb:10: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:02:27 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/retailers" for 127.0.0.1 at 2018-05-22 14:02:38 -0400
+Processing by RetailersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aEFR/7miOKRQChWtwgO3yoo/p39F5sDW0IOUurD/VUrYi00ipa2W25uOT7TKnM+HBjIgluV+3GjzGJMKtULRRQ==", "retailer"=>{"name"=>"Little Debbie", "year_established"=>"1982"}, "commit"=>"Create Retailer"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/retailers_controller.rb:12
+  [1m[36mRetailer Create (0.5ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Little Debbie"], ["year_established", 1982], ["created_at", "2018-05-22 18:02:38.258450"], ["updated_at", "2018-05-22 18:02:38.258450"]]
+  ↳ app/controllers/retailers_controller.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/retailers_controller.rb:12
+Redirected to 
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `retailer_url' for #<RetailersController:0x007f824d776f88>
+Did you mean?  retailers_url):
+  
+app/controllers/retailers_controller.rb:13:in `create'
+Started GET "/retailers" for 127.0.0.1 at 2018-05-22 14:03:30 -0400
+Processing by RetailersController#index as HTML
+  Rendering retailers/index.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/retailers/index.html.erb:1
+  Rendered retailers/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:06:45 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 25.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:06:55 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:06:56 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:06:56 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:07:28 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:08:13 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:08:32 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:09:03 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:09:17 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:09:37 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/retailers" for 127.0.0.1 at 2018-05-22 14:10:01 -0400
+Processing by RetailersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZgjWbetaS5oZ/Nr0d+eCB9fpqzPpfe5BkY1KAFslFTRUj+Eq6LHUaPjqXLZQOZFk1IhRW896wcl3TKYBNEQWw==", "retailer"=>{"name"=>"Mars", "year_established"=>"1900", "snacks_attributes"=>{"0"=>{"name"=>"M&Ms", "calories"=>"200", "deliciousness"=>"8"}}}, "commit"=>"Create Retailer"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/retailers_controller.rb:13
+  [1m[36mRetailer Create (0.4ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mars"], ["year_established", 1900], ["created_at", "2018-05-22 18:10:01.991091"], ["updated_at", "2018-05-22 18:10:01.991091"]]
+  ↳ app/controllers/retailers_controller.rb:13
+  [1m[36mSnack Create (0.1ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "M&Ms"], ["calories", 200], ["deliciousness", 8], ["created_at", "2018-05-22 18:10:01.992790"], ["updated_at", "2018-05-22 18:10:01.992790"], ["retailer_id", 6]]
+  ↳ app/controllers/retailers_controller.rb:13
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/retailers_controller.rb:13
+Redirected to http://localhost:3000/retailers
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/retailers" for 127.0.0.1 at 2018-05-22 14:10:01 -0400
+Processing by RetailersController#index as HTML
+  Rendering retailers/index.html.erb within layouts/application
+  [1m[36mRetailer Load (0.3ms)[0m  [1m[34mSELECT "retailers".* FROM "retailers"[0m
+  ↳ app/views/retailers/index.html.erb:1
+  Rendered retailers/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/snacks" for 127.0.0.1 at 2018-05-22 14:10:06 -0400
+Processing by SnacksController#index as HTML
+  Rendering snacks/index.html.erb within layouts/application
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT "snacks".* FROM "snacks"[0m
+  ↳ app/views/snacks/index.html.erb:11
+  Rendered snacks/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/snacks/6" for 127.0.0.1 at 2018-05-22 14:10:08 -0400
+Processing by SnacksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSnack Load (0.2ms)[0m  [1m[34mSELECT  "snacks".* FROM "snacks" WHERE "snacks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/snacks_controller.rb:45
+  Rendering snacks/show.html.erb within layouts/application
+  [1m[36mRetailer Load (0.2ms)[0m  [1m[34mSELECT  "retailers".* FROM "retailers" WHERE "retailers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/snacks/show.html.erb:10
+  Rendered snacks/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:10:27 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 14:10:57 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 46ms (Views: 27.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/retailers" for 127.0.0.1 at 2018-05-22 14:11:09 -0400
+Processing by RetailersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fNbu94VckDf/AwWXjnN4LAS7gXKcWSvfTXcXP2qwzePMHPIqmVM+SDSHX46G7ABhiLYGmzzBN2Fu7BCPbw1J7A==", "retailer"=>{"name"=>"Another company", "year_established"=>"1500", "snacks_attributes"=>{"0"=>{"name"=>"Snacks", "calories"=>"400000", "deliciousness"=>"1"}}}, "commit"=>"Create Retailer"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/retailers_controller.rb:14
+  [1m[36mRetailer Create (0.7ms)[0m  [1m[32mINSERT INTO "retailers" ("name", "year_established", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Another company"], ["year_established", 1500], ["created_at", "2018-05-22 18:25:30.668775"], ["updated_at", "2018-05-22 18:25:30.668775"]]
+  ↳ app/controllers/retailers_controller.rb:14
+  [1m[36mSnack Create (0.2ms)[0m  [1m[32mINSERT INTO "snacks" ("name", "calories", "deliciousness", "created_at", "updated_at", "retailer_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Snacks"], ["calories", 400000], ["deliciousness", 1], ["created_at", "2018-05-22 18:25:30.676415"], ["updated_at", "2018-05-22 18:25:30.676415"], ["retailer_id", 7]]
+  ↳ app/controllers/retailers_controller.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/retailers_controller.rb:14
+Redirected to http://localhost:3000/retailers
+Completed 302 Found in 861492ms (ActiveRecord: 1.7ms)
+
+
