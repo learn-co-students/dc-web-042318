@@ -1,12 +1,3 @@
-
-<% if @snack.errors %>
-    <ul>
-    <% @snack.errors.full_messages.each do |message| %>
-        <li class="error"><%= message %></li>
-    <% end %>
-    </ul>
-<% end %>
-
 <%= form_for @snack do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
