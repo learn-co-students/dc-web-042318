@@ -15,8 +15,14 @@ class SnacksController < ApplicationController
     end
 
     def create
-        @snack = Snack.create(get_snack_params)
-        redirect_to @snack
+        @snack = Snack.new(get_snack_params)
+        if @snack.valid?
+            @snack.save
+            redirect_to @snack
+        else
+            render :new
+
+        end
     end
 
     def edit

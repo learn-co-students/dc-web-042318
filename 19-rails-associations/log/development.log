@@ -2089,3 +2089,17 @@ Redirected to http://localhost:3000/retailers
 Completed 302 Found in 861492ms (ActiveRecord: 1.7ms)
 
 
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 15:17:48 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 47ms (Views: 24.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/retailers/new" for 127.0.0.1 at 2018-05-22 15:31:38 -0400
+Processing by RetailersController#new as HTML
+  Rendering retailers/new.html.erb within layouts/application
+  Rendered retailers/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
