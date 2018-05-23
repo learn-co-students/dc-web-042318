@@ -1,3 +1,11 @@
+<% if @retailer.errors %>
+    <ul>
+        <% @retailer.errors.full_messages.each do |message| %>
+            <li class="error"><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
 <%= form_for @retailer do |r| %>
 <%= r.label :name %>
 <%= r.text_field :name %>
@@ -5,14 +13,4 @@
 <%= r.number_field :year_established %>
 <%= r.submit %>
 
-    <div>
-        <%= r.fields_for :snacks do |snack| %>
-        <%= snack.label :name, "Snack Name" %>
-        <%= snack.text_field :name %>
-        <%= snack.label :calories %>
-        <%= snack.number_field :calories %>
-        <%= snack.label :deliciousness %>
-        <%= snack.select :deliciousness, (1..10) %>
-    <% end %>
-</div>
 <% end %>

@@ -1,3 +1,5 @@
+require_relative "../models/retailer.rb"
+
 class RetailersController < ApplicationController
 
   def index
@@ -11,7 +13,16 @@ class RetailersController < ApplicationController
 
   def create
     @retailer = Retailer.create(retailer_params)
-    redirect_to retailers_path
+    if @retailer.valid?
+      redirect_to retailers_path
+    else
+      render :new
+    end
+  end
+
+  def show
+    # byebug
+    @retailer = Retailer.find(params[:id])
   end
 
   private
