@@ -34,8 +34,13 @@ snack.rb
 ```
 
 
+retailer.rb
 
+validates :name, presence: true, uniqueness: true
+    validates :year_established, presence: true
 
-
+    def year_established_must_be_valid
+        self.year_established > 1800 && self.year_established <= Date.today.year
+    end
 
 QUESTION:  What about update?
