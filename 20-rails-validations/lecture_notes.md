@@ -1,3 +1,5 @@
+FIX THESE NOTES THEY'RE TERRIBLE AND INCOMPLETE
+
 * Why use validations
     - Users are dumb (show gif)
 
