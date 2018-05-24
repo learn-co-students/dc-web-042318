@@ -1,0 +1,16 @@
+<% if !@movie.errors.empty? %>
+    <ul>
+        <% @movie.errors.full_messages.each do |m| %>
+            <li><%= m %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @movie do |f| %>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+   <%= f.label :year %>
+   <%= f.number_field :year %>
+   <%= f.collection_select :director_id, Director.all, :id, :name, {prompt: true} %>
+   <%= f.submit %>
+<% end %>

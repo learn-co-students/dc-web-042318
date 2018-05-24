@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Detail Page</title>
+</head>
+<body>
+
+<h1>Detail page</h1>
+
+<div><%= @movie.title %></div>
+<div><%= @movie.year %></div>
+<div><%= @movie.director_name %></div>
+
+<div><%= link_to "Index Page", movies_path %></div>
+<div><%= link_to "Edit Page", edit_movie_path(@movie) %></div>
+    <%= form_for @movie, method: :delete do |f| %>
+
+        <%= submit_tag "Delete Movie" %>
+
+    <% end %>
+</body>
+</html>
+
+
+
+

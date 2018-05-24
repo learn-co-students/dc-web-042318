@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All the movies</title>
+</head>
+<body>
+
+<h1>Here are some movies</h1>
+
+<ul>
+<% @movies.each do |movie| %>
+    <li><%= link_to movie.title, movie %> made in <%= movie.year %></li>
+<% end %>
+</ul>
+
+<%= link_to "Create New Movie", new_movie_path %>
+</body>
+</html>
