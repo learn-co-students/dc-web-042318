@@ -1,1 +1,25 @@
+
 <h1>Create a Student</h1>
+
+<% if @student.errors.full_messages %>
+  <% @student.errors.full_messages.each do |error| %>
+    <p><%=error %></p>
+  <% end %>
+<% end %>
+
+<% if flash[:message] %>
+  <p><%=flash[:message]%></p>
+<% end %>
+
+<%= form_for @student, html: {class: 'ui form'} do |f| %>
+  <div class="field">
+    <%= f.text_field(:name, placeholder: 'Enter the student name...') %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email, placeholder: 'Enter the student email...' %>
+  </div>
+  <div class="field">
+    <%= f.date_field :dob %>
+  </div>
+  <%= f.submit({class: 'ui huge pink button'}) %>
+<% end %>
