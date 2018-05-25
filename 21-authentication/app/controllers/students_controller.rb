@@ -4,6 +4,7 @@ class StudentsController < ApplicationController
   end
 
   def show
+    cookies['variety'] = 'chocolate chip'
     @student = Student.find_by(id: params[:id])
   end
 
@@ -13,6 +14,7 @@ class StudentsController < ApplicationController
 
   def create
     Student.create(student_params)
+    byebug
     redirect_to students_path
   end
 
