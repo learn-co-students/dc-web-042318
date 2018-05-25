@@ -54,8 +54,107 @@
 
 - Do the same thing with 'sessions' but show in Edit Cookie that it gets encrypted
 
+    - sessions exist either for a predefined amount of time or often until the browser is closed ("Remember me")
+
 - Building out sign-in; show on github what happens if you clear all cookies and reload (no longer logged in)
     - Cookies expire
 
 - Create user model in app
     ` rails g model user username `
+
+- Create a user or two in the console
+
+- How should we build our login page?  Doesn't really map to a CRUD action
+    -   get '/login', to: 'sessions#new'
+    - show in rake routes
+    - login_path
+
+- add controller with new action `rails g controller sessions new`
+
+- Add link on index page
+- Build new controller 
+    `rails g sessions new`
+
+- Build `new.html.erb`
+    - Using `form_for` since the form is not tied to a model
+    - ```
+    <h1>Login</h1>
+    <%= form_tag '/login' do %>
+        <%= label :username, "Username" %>
+        <%= text_field_tag :username %>
+        <%= submit_tag 'Login' %>
+    <% end %>
+```
+
+- Form needs to post somewhere; add ` post '/login', to: "sessions#create"` to routes.rb
+
+- Elicit desired behavior of login method, build:
+
+```    def create
+        @user = User.find_by(username: params[:username])
+
+        if @user
+            session[:user_id] = @user.id
+            redirect_to snacks_path
+        else
+            render :new
+        end
+    end
+```
+
+- Login link doesn't make sense if already logged in.  Change code to:
+
+```
+    <% if session[:user_id] %>
+        <h1>Welcome <%= User.find(session[:user_id]).username %></h1>
+    <% else %>
+    <%= link_to "Login", login_path %>
+    <% end %>
+```
+
+- Demonstrate deleting the session
+
+- flash - a specific type of cookie that only persists for one request-response cycle
+    - in sessions controller
+    - `flash[:message] = "User could not be found"`
+
+- User is going to be necessary all over the place
+    - ApplicationController:  All other controllers inherit from it, so stuff there is accessible all over
+    ```    
+    def current_user
+        @current_user = User.find_by(id: session[:user_id])
+    end
+    ```
+
+    - doesn't work until you add `helper_method :current_user`
+
+    - Use `current_user` more than once on a single page
+
+    - SHow repeated sql queries in browser/console
+    ```
+    # memoization
+    def current_user
+        if @current_user
+            @current_user
+        else
+            @current_user = User.find_by(id: session[:user_id])
+        end
+
+    end
+    ```
+
+    Build logout
+
+    routes.rb
+    - `delete '/logout', to: 'sessions#destroy'`
+
+    SessionsController#destroy
+    ```
+    def destroy
+        session.clear
+        redirect_to login_path
+    end
+    ```
+    `<%= link_to "Logout", "/logout" %>`
+    won't work because it's a get request
+    `<%= link_to "Logout", "/logout", method: "DELETE" %>`

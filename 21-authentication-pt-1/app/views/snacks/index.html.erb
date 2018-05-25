@@ -4,9 +4,14 @@
     <title>All the snacks</title>
 </head>
 <body>
-
-    <h1>I love snacks</h1>
-
+    <% if current_user %>
+        <h1>Welcome <%= current_user.username %></h1>
+    <% else %>
+    <%= link_to "Login", login_path %>
+    <% end %>
+    <h1>The snacks of <%= current_user.username %></h1>
+    <%= cookies["yummy"] %>
+    <%= session["goodly"] %>
     <ul>
     <% @snacks.each do |snack| %>
         <li><%= link_to "#{snack.name} | #{snack.calories} | #{snack.deliciousness}", snack_path(snack) %></li>
