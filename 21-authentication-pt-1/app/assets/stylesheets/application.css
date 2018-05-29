@@ -1,5 +1,4 @@
 .error {
-    color: red;
+    color: green;
     list-style-type: square;
-    font-size: .8em
 }
