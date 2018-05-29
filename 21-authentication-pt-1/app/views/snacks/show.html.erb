@@ -4,6 +4,8 @@
     <title>This is a snack</title>
 </head>
 <body>
+    <h1> <% cookies['variety'] = "chocolate-chip" %></h1>
+    <h1> <% session['flavor'] = "delicious" %></h1>
     <h1><%= @snack.name %></h1>
     <div><%= @snack.calories %> calories </div>
     <div>Deliciousness: <%= @snack.deliciousness %></div>

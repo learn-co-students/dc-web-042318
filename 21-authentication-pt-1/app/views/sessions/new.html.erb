@@ -1,0 +1,13 @@
+<h1>Log in page</h1>
+
+<% if @user %>
+    <h4>Welcome <%= @user.username %></h4>
+<% else %>
+<h2 class="error"><%= flash[:message] %></h2>
+<% end %>
+
+<%= form_tag '/login' do %>
+    <%= label_tag "Username" %>
+    <%= text_field_tag :username %>
+    <%= submit_tag "Log in"%>
+<% end %>
