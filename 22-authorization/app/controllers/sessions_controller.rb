@@ -3,16 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params['username'])
-
+    @user = User.find_by(username: params[:username])
     # user exists
-    if @user
+    if @user.authenticate(params[:password])
         session[:user_id] = @user.id
         redirect_to snacks_path
-    # user doesn't
+    # user doesn't exist
     else
-        flash[:message] = "User could not be found"
-        render :new
+        @user = nil
+        flash[:message] = "Username and password do not match"
+        redirect_to login_path
     end
   end
 
