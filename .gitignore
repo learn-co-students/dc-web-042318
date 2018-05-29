@@ -3,6 +3,7 @@
 
 *.lock
 *.sqlite
+*.sqlite3
 
 tmp/
 log/
