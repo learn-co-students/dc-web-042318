@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All the snacks</title>
+</head>
+<body>
+    <% if current_user %>
+        <h1>Welcome <%= current_user.username %></h1>
+    <% else %>
+    <%= link_to "Login", login_path %>
+    <% end %>
+    <h1>The snacks of <%= current_user.username %></h1>
+    <%= cookies["yummy"] %>
+    <%= session["goodly"] %>
+    <ul>
+    <% @snacks.each do |snack| %>
+        <li><%= link_to "#{snack.name} | #{snack.calories} | #{snack.deliciousness}", snack_path(snack) %></li>
+    <% end %>
+    </ul>
+
+    <%= link_to "New snack", new_snack_path %>
+</body>
+</html>
