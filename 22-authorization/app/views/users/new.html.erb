@@ -1,0 +1,15 @@
+<h1>Create a new user or <%= link_to "login", login_path %></h1>
+
+<% if flash[:error] %>
+    <% flash[:error].each do |error| %>
+        <li class="error"><%= error %></li>
+    <% end %>
+<% end %>
+
+<%= form_for :user, :url => users_path do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit %>
+<% end %>
