@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'user/new'
   get 'sessions/new'
   # crud routes :index, :show, :destroy, :edit, :update, :create, :new
   resources :snacks
