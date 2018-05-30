@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New User</title>
+</head>
+<body>
+
+<h1>Create New User</h1>
+
+<ul>
+    <% if flash[:error] %>
+        <% flash[:error].each do |error| %>
+            <li class="error"><%= error %></li>
+        <% end %>
+    <% end %>
+</ul>
+
+<%= form_for(@user) do |f| %> <!-- should post to /users not /users/new -->
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit %>
+<% end %>
+</body>
+</html>
