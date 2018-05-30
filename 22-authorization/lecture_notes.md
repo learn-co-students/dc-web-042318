@@ -1,3 +1,5 @@
+- Talk about using Git for atomic commits
+
 - uncomment bcrypt in Gemfile
 
 - add has_secure_password to User model

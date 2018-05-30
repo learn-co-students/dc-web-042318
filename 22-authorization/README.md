@@ -1,24 +1,7 @@
-# README
+Objectives
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Install and use the `bcrypt` Gem
+- Create a User with a hashed password
+- Build a sign-up page to create a new user
+- Authenticate User on sign-in
+- Practice using Git for atomic commits
