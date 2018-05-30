@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>All the snacks</title>
-</head>
-<body>
 
     <% if current_user %>
         <h4>Welcome <%= current_user.username %></h4>
@@ -22,5 +16,3 @@
     </ul>
 
     <%= link_to "New snack", new_snack_path %>
-</body>
-</html>
