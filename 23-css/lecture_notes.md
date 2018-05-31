@@ -8,10 +8,6 @@ http://art.yale.edu/  Terrible design.  I’m not giving them my credit card or 
 
 Show simple HTML self page, then one with Bootstrap included (Semantic also a good option)
 
--CSS Box Model
-    -Show W3 page https://www.w3schools.com/css/css_boxmodel.asp
-        -Margin, border, padding, content
-    -Show self created page box_model.html.  Show inspector and how to change elements.
 
 Demo external, internal and inline styling.  Promote external. External vs internal precedence is whichever comes first.  Inline takes precedence over them.  
 
