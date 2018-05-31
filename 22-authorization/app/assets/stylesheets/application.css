@@ -2,3 +2,19 @@
     color: green;
     list-style-type: square;
 }
+
+.bordered-box {
+    padding: 20px;
+    font-size: 30px;
+    margin: 20px;
+    border: 20px solid green;
+
+}
+
+#deliciousness {
+
+}
+
+* {
+    background-color: blue !important;
+}

@@ -1,0 +1,13 @@
+
+   
+    <h1>I love snacks</h1>
+    <ul>
+    <% if current_user %>
+        <h4>Hi <%= current_user.username %>: Here are your snacks</h4>
+    <% end %>
+    <% @snacks.each do |snack| %>
+        <li><%= link_to "#{snack.name} | #{snack.calories} | #{snack.deliciousness}", snack_path(snack) %></li>
+    <% end %>
+    </ul>
+
+    <%= link_to "New snack", new_snack_path %>

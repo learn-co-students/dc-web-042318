@@ -1,0 +1,22 @@
+.error {
+    color: green;
+    list-style-type: square;
+}
+
+div.bordered-box {
+    border: 20px solid green;
+    margin: 20px;
+    font-size: 32px;
+    padding: 20px;
+    background-color: green;
+}
+
+.pink {
+    background-color: pink;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+#red-background {
+    background-color: red;
+}

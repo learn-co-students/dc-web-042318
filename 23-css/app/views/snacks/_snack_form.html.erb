@@ -1,0 +1,29 @@
+<% if @snack.errors %>
+    <ul>
+        <% @snack.errors.full_messages.each do |message| %>
+            <li class="error"><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @snack do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :calories %>
+<%= f.number_field :calories %>
+<%= f.label :deliciousness %>
+<%= f.select :deliciousness, (1..10) %>
+<%= f.collection_select(:retailer_id, Retailer.all, :id, :name, prompt:true) %>
+
+
+<%= f.submit "Make this snack" %>
+
+    <h2>New Retailer</h2>
+    <%= f.fields_for :retailer do |r| %>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+    <%= r.label :year_established %>
+    <%= r.number_field :year_established %>
+    <% end %>
+
+<% end %>

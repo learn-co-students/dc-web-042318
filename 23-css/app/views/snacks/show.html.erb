@@ -1,0 +1,8 @@
+
+    <div class="bordered-box pink" id="red-background"><%= @snack.name %></div class="bordered-box">
+    <div><%= @snack.calories %> calories </div>
+    <div id="deliciousness">Deliciousness: <%= @snack.deliciousness %></div>
+    <div>Made by: <%= @snack.retailer.name %></div>
+
+    <%= link_to "Index", snacks_path %>
+    <%= link_to "Edit", edit_snack_path %>
