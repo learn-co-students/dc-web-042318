@@ -1,0 +1,58 @@
+{
+  "characters": [
+    {
+      "name": "Cthulhu",
+      "location": "Kadath",
+      "img": "https://robohash.org/aestquis.png?size=300x300&set=set1",
+      "id": 1
+    },
+    {
+      "name": "Hastur",
+      "location": "Leng",
+      "img": "https://robohash.org/minusvoluptasrepellendus.png?size=300x300&set=set1",
+      "id": 2
+    },
+    {
+      "name": "Yog-Sothoth",
+      "location": "Leng",
+      "img": "https://robohash.org/sedfugitfugiat.png?size=300x300&set=set1",
+      "id": 3
+    },
+    {
+      "name": "Shub-Niggurath",
+      "location": "R’lyeh",
+      "img": "https://robohash.org/nihilsitqui.png?size=300x300&set=set1",
+      "id": 4
+    },
+    {
+      "name": "Nyarlathotep",
+      "location": "Miskatonic",
+      "img": "https://robohash.org/repudiandaeutcorrupti.png?size=300x300&set=set1",
+      "id": 5
+    },
+    {
+      "name": "Tsathoggua",
+      "location": "Kingsport",
+      "img": "https://robohash.org/dolorumdoloresut.png?size=300x300&set=set1",
+      "id": 6
+    },
+    {
+      "name": "Cthulhu",
+      "location": "Miskatonic",
+      "img": "https://robohash.org/quaesuscipitmolestias.png?size=300x300&set=set1",
+      "id": 7
+    },
+    {
+      "name": "bunny",
+      "location": "camelot",
+      "img": "img",
+      "id": 8
+    },
+    {
+      "name": "puppy",
+      "location": "new hampshire",
+      "img": "img",
+      "id": 9
+    }
+  ]
+}
