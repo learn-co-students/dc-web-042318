@@ -47,5 +47,25 @@ GET /cats/:id - show
 POST /cats - create
 ...
 
+
+## Problems
+1. have to map through objects, create hashes
+2. we don't have associated data
+
 ## Serializer
+
+Define a way to serialize rails ActiveModels
+
+## Note: fetch
+
+Does not catch 404!
+
 ## Associated data
+
+use has_many in the Serializer, it will fetch through
+
+
+## N + 1 Queries
+
+Don't!
+(fix with includes)

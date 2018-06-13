@@ -7,7 +7,25 @@ function fetchCats() {
     fetch("http://localhost:3000/cats")
       // 2. parse the json
       .then(res => res.json())
-      .then(json => json.cats)
+      .then(json => json)
+  );
+}
+
+function fetchCat(id) {
+  return (
+    fetch("http://localhost:3000/cats/" + id)
+      // 2. parse the json
+      .then(res => res.json())
+      .then(json => json)
+  );
+}
+
+function fetchHobby(id) {
+  return (
+    fetch("http://localhost:3000/hobbies/" + id)
+      // 2. parse the json
+      .then(res => res.json())
+      .then(json => json)
   );
 }
 
@@ -21,6 +39,7 @@ function renderCats() {
   fetchCats().then(cats => {
     // console.log(cats);
     cats.forEach(cat => {
+      console.log(cat.hobbies);
       let stringLi = createLiFromCat(cat);
       getUl().innerHTML += stringLi;
     });
@@ -41,3 +60,5 @@ const fluffer = {
 function createLiFromCat(cat) {
   return `<li>${cat.name}, age: ${cat.age}, breed: ${cat.breed}</li>`;
 }
+
+document.addEventListener("DOMContentLoaded", renderCats);

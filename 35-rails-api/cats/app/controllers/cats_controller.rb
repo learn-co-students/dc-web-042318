@@ -1,9 +1,30 @@
-
 class CatsController < ApplicationController
   def index
-    cat_array = Cat.all
-    # binding.pry
-    hash_cat_array = cat_array.map { |cat| { id: cat.id, name: cat.name, age: cat.age, breed: cat.breed, quote: cat.quote } }
-    render json: { cats: hash_cat_array }
+    render json: Cat.all.includes(:hobbies)
+  end
+
+  def show
+    render json: Cat.find(params[:id])
+  end
+
+  # we don't need a whole page for the form
+
+  # def new
+  # end
+
+  def create
+    render json: Cat.create(cat_params)
+  end
+
+  # def edit
+  # end
+
+  def update
+    render json: Cat.find(params[:id]).update(cat_params)
+  end
+
+  def delete
+    # check my work
+    render json: Cat.find(params[:id]).destroy
   end
 end
