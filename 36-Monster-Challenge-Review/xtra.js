@@ -1,18 +1,8 @@
-// function createSearchBtns() {
-//   const backBtn = document.createElement('button')
-//   const forwardBtn = document.createElement('button')
-//   backBtn.innerHTML = '<='
-//   backBtn.id = 'back'
-//   forwardBtn.innerHTML = '=>'
-//   forwardBtn.id = 'forward'
-//   monsterContainer.appendChild(backBtn)
-//   monsterContainer.appendChild(forwardBtn)
-//   addPageChangeListeners(backBtn, forwardBtn)
-// }
 console.log("now you're in xtra");
 const URL_PREFIX = 'http://localhost:3000'
 const monsterContainer = document.querySelector('#monster-container')
 const createMonster = document.querySelector('#create-monster')
+//https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment
 const frag = document.createDocumentFragment();
 let page = 1;
 

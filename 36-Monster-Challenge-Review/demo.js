@@ -4,6 +4,15 @@
 const URL_PREFIX = 'http://localhost:3000/'
 let page = 1;
 
+  //create element for monsters
+  //fetch monsters
+    // optional parameters:
+    // _limit=[number] - limit the number of monsters returned
+    // _page=[number] - offset your request for monsters to some page (must specify a limit)
+    // example:
+    // GET http://localhost:3000/monsters/?_limit=20&_page=3
+  //attach monsters
+
 const getMonsters = (page) => {
   console.log("get monsters function");
   fetch(URL_PREFIX + `monsters/?_limit=50&_page=${page}`)
@@ -34,16 +43,19 @@ const createMonsterCard = (monster) => {
   document.querySelector('#monster-container').appendChild(card);
 }
 
-  //create element for monsters
-  //fetch monsters
-    // optional parameters:
-    // _limit=[number] - limit the number of monsters returned
-    // _page=[number] - offset your request for monsters to some page (must specify a limit)
-    // example:
-    // GET http://localhost:3000/monsters/?_limit=20&_page=3
-  //attach monsters
-
 //ADD NEW MONSTER
+//create form elements
+//capture data from form
+//fetch post request
+//render new monster at top(?)
+
+  //grab input values
+  //return new monster data from form in an object
+
+  //send form data through submit evt listener
+
+  //fetch request to post new monster
+  //clear form inputs
 
   const createMonsterForm = () => {
     const monsterForm = document.createElement('form')
@@ -114,6 +126,11 @@ const createMonsterCard = (monster) => {
     document.querySelector('#monster-form').reset();
   }
 
+  //VIEW 50 MONSTERS AT A TIME
+    //create button element
+    //attach 'changePage' evt listener to button that fetches the next 50
+    //pageUp, pageDown functions for each button
+
   const addNavListeners = () => {
     let back = document.querySelector('#back')
     let forward = document.querySelector('#forward')
@@ -139,27 +156,6 @@ const createMonsterCard = (monster) => {
       alert('Aint no monsters here')
     }
   }
-
-
-  //create form elements
-  //capture data from form
-  //fetch post request
-  //render new monster at top(?)
-
-    //grab input values
-    //return new monster data from form in an object
-
-    //send form data through submit evt listener
-
-    //fetch request to post new monster
-    //clear form inputs
-
-
-//VIEW 50 MONSTERS AT A TIME
-  //create button element
-  //attach 'changePage' evt listener to button that fetches the next 50
-  //pageUp, pageDown functions for each button
-
 
 const init = () => {
   getMonsters();

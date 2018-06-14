@@ -71,14 +71,3 @@ Content-type: application/json
 data:
 { name: string, age: number, description: string }
 ```
-
-```
-//here, I want to replace the page's content with the most recent batch of
-//fetched data - while monsterContainer has a child,
-//remove its first child until there is no first child left
-(getMonsters)
-(before looping through monster data from most recent fetch)
-while(monsterContainer.firstChild) {
-  monsterContainer.removeChild(monsterContainer.firstChild)
-  }
-```
