@@ -41,10 +41,23 @@ package manager
 install different frameworks and libraries
 manage the dependencies of your application
 
+.gitignore node_modules
+
 ## Webpack
 Combine files into a single script file
+follow the requires / imports - actually go get that code
+uses different 'loaders'
+
+built our files into a bundle
+
+dev-server watches for changes, fixes our broken flow
 
 ## React
+ReactDOM.render - take over the DOM below this element
+What can we render? React Elements!
+
+create element is ugly
+
 
 ## JSX
 
