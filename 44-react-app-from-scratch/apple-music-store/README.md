@@ -6,11 +6,11 @@ Let's build out a sample frontend app from scratch (Apple Music Store)!
 * Build out functionality with API
 
 Components:
-SearchBar
-FeaturedMusic
- - FeaturedMusicItem
-OtherMusic
- - OtherMusicItem
+- SearchBar
+- FeaturedMusic
+- FeaturedMusicItem
+- OtherMusic
+- OtherMusicItem
 
 State:
  - Search term
