@@ -1,38 +1,3 @@
-Let's build out a sample frontend app from scratch (Apple Music Store)!
-
-* Decide on component hierarchy
-* Build out App components and 'dumb' components
-* Decide what state is and where it lives
-* Build out functionality with API
-
-Components:
-SearchBar
-FeaturedMusic
- - FeaturedMusicItem
-OtherMusic
- - OtherMusicItem
-
-State:
- - Search term
- - featuredMusicResults
- - otherMusicResults
-
- Questions / follow ups / refactor:
- - State and props trigger re-render
- - Make the app compatible for all browsers
- - improve CSS
- - Have a generic card component (featured music card will have additional play button and music player)
- - Experiment with lodash debounce
- - Pause other songs playing when clicking on Play
-
-
-## Sample API Response:
-
-```
-https://itunes.apple.com/search?limit=8&term=${term}
-```
-
-```
 const data = {
  "resultCount":8,
  "results": [
@@ -53,21 +18,3 @@ const data = {
 };
 
 export default data;
-```
-
-### Other Reference Material:
-
-```
-import _ from 'lodash';
-let debounceFunc = _.debounce(callbackFunc, 200);
-```
-
-```
-npm install react-player --save
-```
-
-```
-import ReactPlayer from 'react-player'
-<ReactPlayer />
-
-```
