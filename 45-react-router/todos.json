@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Step 1. Get one whole cantelope"
+    },
+    {
+      "id": 2,
+      "text": "Step 2. Get two more cantelopes"
+    },
+    {
+      "text": "Make the tasklist project work",
+      "id": 3
+    },
+    {
+      "text": "Created a task",
+      "id": 4
+    },
+    {
+      "text": "fix the key bug",
+      "id": 5
+    },
+    {
+      "text": "validate input",
+      "id": 6
+    }
+  ]
+}
