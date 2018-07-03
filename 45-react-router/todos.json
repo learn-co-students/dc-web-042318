@@ -23,6 +23,18 @@
     {
       "text": "validate input",
       "id": 6
+    },
+    {
+      "text": "use react router to show different components when the url is different",
+      "id": 7
+    },
+    {
+      "text": "do more complicated things with react router",
+      "id": 8
+    },
+    {
+      "text": "add a task, update the path",
+      "id": 9
     }
   ]
 }

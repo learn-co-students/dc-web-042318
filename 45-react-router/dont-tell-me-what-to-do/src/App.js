@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import { Route, Link, Switch } from "react-router-dom";
+
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
+import About from "./components/About";
+import TaskDetailView from "./components/TaskDetailView";
 
 const url = "http://localhost:3000/todos";
 
@@ -50,9 +54,48 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <TaskForm onSubmit={this.addTask} />
-        <TaskList removeTask={this.removeTask} tasks={this.state.tasks} />
+        <Route component={Navbar} />
+        <Switch>
+          <Route
+            path="/tasks/:id"
+            render={props => {
+              return (
+                <TaskDetailView
+                  task={this.state.tasks.find(
+                    t => t.id == props.match.params.id
+                  )}
+                />
+              );
+            }}
+          />
+          <Route path="/about" component={About} />
+          <Route
+            path="/tasks"
+            render={props => {
+              return (
+                <div>
+                  <TaskForm
+                    onSubmit={value => {
+                      this.addTask(value);
+                      // change the route to /tasks/:id
+                      props.history.push("/about");
+                    }}
+                  />
+                  <TaskList
+                    removeTask={this.removeTask}
+                    tasks={this.state.tasks}
+                  />
+                </div>
+              );
+            }}
+          />
+        </Switch>
+        <div>
+          <Link to="/nav">Click to see the navbar</Link>
+        </div>
+        <div>
+          <Link to="/">Click to hide the navbar</Link>
+        </div>
       </div>
     );
   }
