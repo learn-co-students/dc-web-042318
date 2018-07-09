@@ -1,5 +1,7 @@
 class AuthController < ApplicationController
 
+  skip_before_action :authenticate, only: [:login]
+
   # post to /login with { username: 'some name', password: 'some password' }
   # if valid, respond with jwt token
   # if not valid, respond with some error message

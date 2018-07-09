@@ -1,23 +1,27 @@
 import React from "react";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:3001";
 
 class UserPage extends React.Component {
   state = {
     user: null
   };
 
-  componentDidMount() {
-    fetch(`${baseUrl}/user`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    })
-      .then(res => res.json())
-      .then(json => {
-        this.setState({ user: json });
-      });
+  componentDidUpdate() {
+    let token = localStorage.getItem("token");
+    if (this.props.loggedIn && token) {
+      fetch(`${baseUrl}/user`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`
+        }
+      })
+        .then(res => res.json())
+        .then(json => {
+          this.setState({ user: json });
+        });
+    }
   }
 
   render() {
