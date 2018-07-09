@@ -1,6 +1,22 @@
 class ApplicationController < ActionController::API
   # include ActionController::HttpAuthentication::Token::ControllerMethods
 
+
+
+  private
+
+  def encode(payload)
+    secret = 'my$ecretK3y'
+    JWT.encode(payload, secret, 'HS256')
+  end
+
+  # will raise an error if the token is not valid
+  def decode(encrypted_token)
+    secret = 'my$ecretK3y'
+    JWT.decode(encrypted_token, secret, true, { algorithm: 'HS256' })
+  end
+
+
 end
 
 

@@ -10,6 +10,19 @@ class Login extends React.Component {
 
   login = e => {
     e.preventDefault();
+
+    let params = {
+      username: this.state.username,
+      password: this.state.password
+    };
+    let url = "http://localhost:3001/login";
+    fetch(url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(params)
+    })
+      .then(res => res.json())
+      .then(console.log);
   };
 
   render() {
