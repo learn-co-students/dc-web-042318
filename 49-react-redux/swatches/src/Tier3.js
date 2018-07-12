@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 const Tier3 = props => (
   <div
     className="tier3"
-    onClick={props.handleClick}
+    onClick={props.generateColors}
     style={{ backgroundColor: props.color, color: props.color }}
   />
 );

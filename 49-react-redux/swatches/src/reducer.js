@@ -1,18 +1,24 @@
 import { getReducedColor, getRandomColor } from "./randomColorGenerator.js";
 
-const generateColors = id => {
-  // if id is "1", need to add 2 more colors
-  // if id is "2.1.2", need to add no more colors
-  const count = 3 - id.split(".").length;
-  const base = getRandomColor();
-  let color = base;
-  const colors = { [id]: base };
-  for (let idx = 0; idx < count; idx++) {
-    color = getReducedColor(color);
-    const toAdd = `${id}.${new Array(idx).fill(1).join(".")}`;
-    colors[toAdd] = color;
+const DEPTH = 3;
+
+// Generating colors recursively for the children, based on the id
+// "1" => ["1", "1.1", "1.2", "1.1.1", "1.1.2", "1.2.1", "1.2.2"]
+// "1.2" => ["1.2", "1.2.1", "1.2.2"]
+// "2.1.2" => ["2.1.2"]
+const generateColors = (id, color = getRandomColor()) => {
+  let remaining = DEPTH - id.split(".").length;
+  let colors = { [id]: color };
+  if (remaining > 0) {
+    let next1 = id + ".1";
+    let next2 = id + ".2";
+    const reduced = getReducedColor(color);
+    colors = {
+      ...colors,
+      ...generateColors(next1, reduced),
+      ...generateColors(next2, reduced)
+    };
   }
-  console.log(colors);
   return colors;
 };
 
@@ -24,7 +30,6 @@ const reducer = (oldState = {}, action) => {
       ...oldState,
       ...generateColors(action.id)
     };
-    console.log(newState);
     return newState;
   }
   return oldState;
