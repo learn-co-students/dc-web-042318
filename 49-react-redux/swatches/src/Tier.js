@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Tier2 from "./Tier2";
 
-class Tier1 extends Component {
+class Tier extends Component {
   componentDidMount() {
     this.props.generateColors();
   }
@@ -11,11 +10,21 @@ class Tier1 extends Component {
     return (
       <div
         onClick={this.props.generateColors}
-        className="tier1"
+        className="tier"
         style={{ backgroundColor: this.props.color, color: this.props.color }}
       >
-        <Tier2 id={this.props.id + ".1"} />
-        <Tier2 id={this.props.id + ".2"} />
+        {this.props.depth > 0 ? (
+          <ConnectedTier
+            id={this.props.id + ".1"}
+            depth={this.props.depth - 1}
+          />
+        ) : null}
+        {this.props.depth > 0 ? (
+          <ConnectedTier
+            id={this.props.id + ".2"}
+            depth={this.props.depth - 1}
+          />
+        ) : null}
       </div>
     );
   }
@@ -36,7 +45,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(
+const ConnectedTier = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Tier1);
+)(Tier);
+
+export default ConnectedTier;

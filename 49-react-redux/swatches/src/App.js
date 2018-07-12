@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Tier1 from "./Tier1.js";
+import Tier from "./Tier.js";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tier1 id="1" />
-        <Tier1 id="2" />
+        <Tier id="1" depth={2} />
+        <Tier id="2" depth={2} />
       </div>
     );
   }
