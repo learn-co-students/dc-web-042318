@@ -15,10 +15,14 @@
   ],
   "profiles": [
     {
-      "name": "Rob"
+      "name": "Rob",
+      "imageSrc":
+        "https://assets3.thrillist.com/v1/image/2754967/size/tmg-article_tall;jpeg_quality=20.jpg"
     },
     {
-      "name": "Sam"
+      "name": "Sam",
+      "imageSrc":
+        "https://dakotapethospital.com/clients/14546/images/pile_of_puppies.jpg"
     }
   ],
   "hogs": [
