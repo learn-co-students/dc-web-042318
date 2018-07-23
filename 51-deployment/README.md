@@ -14,6 +14,13 @@ Goals:
 Client makes a request to the server for some information
   - HTTP request (GET, POST, ...)
 
+Server responds
+  mod2: rendered html pages as the response body
+
+
+  mod3: ...index.html gets rendered as a single page app
+        json as the response body
+
 1. Domain Name Resolution
   google.com => 216.58.218.238
 
@@ -40,6 +47,7 @@ Server sends a response to the request (HTTP response)
 Page loaded by the browser
 Data gets used by the client application
 
+
 So far, client and server on the same machine.
 
 
@@ -64,7 +72,6 @@ So far, client and server on the same machine.
 * Application on some machines
 * Database on another machine
 * Servers should know how to reach the database
-
 
 ## Scale?
 
@@ -177,6 +184,8 @@ Follow the Rails steps from Method 1, then Choose Your Own Adventure to deploy y
 ### Method 4: Manual Mode Rails + React (on Digital Ocean, AWS, Linode, etc)
 
 This is hard, but you can do it! Instead of getting a service to do your dirty work for you, just run commands on a computer, and point the domain at it!
+
+Chef, Puppet, Docker
 
 ## Heroku Tips
 

@@ -1,15 +1,19 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import "./App.css";
 
-const url = "http://localhost:3000/players";
+console.log(process.env["NODE_ENV"]);
+const url =
+  process.env["NODE_ENV"] === "development"
+    ? "http://localhost:3000/players"
+    : "https://world-cuppr.herokuapp.com/players";
 
 class App extends Component {
-  // componentDidMount() {
-  // fetch(url)
-  // .then(res => res.json())
-  // .then(players => console.log(players));
-  // }
+  componentDidMount() {
+    fetch(url)
+      .then(res => res.json())
+      .then(players => this.setState({ players }));
+  }
 
   render() {
     return (
@@ -18,9 +22,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.state &&
+          this.state.players.map(player => (
+            <div key={player.id}>{player.name}</div>
+          ))}
       </div>
     );
   }
