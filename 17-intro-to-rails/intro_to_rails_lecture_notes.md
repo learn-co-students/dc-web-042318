@@ -1,24 +1,16 @@
 # Intro to Rails
 
 ### Objectives
-*After this lesson, students will be able to:*
 
-- Create a new Rails application
-- Describe similarities between Sinatra routing & Rails routing
-- Generate a controller
-- Create actions/methods for a RESTful controller
-- Create views
-- Generate a model
-- Create routes
+_After this lesson, students will be able to:_
 
-### Preparation
-*Before this lesson, students should already be able to:*
-
-- Execute ruby code in `irb`
-- Explain the difference between HTTP request/request
-- Explain MVC
-- Describe SQL
-- Write SQL select statements
+* Create a new Rails application
+* Describe similarities between Sinatra routing & Rails routing
+* Generate a controller
+* Create actions/methods for a RESTful controller
+* Create views
+* Generate a model
+* Create routes
 
 ## Intro: What is Rails (10 mins)
 
@@ -32,9 +24,9 @@ Rails was created with the goal of increasing programmers' happiness and product
 
 Check out the [Rails Doctrine](https://rubyonrails.org/doctrine/)
 
- Rails heavily emphasizes ***"Convention over Configuration."*** This means that a programmer only needs to specify and code out the non-standard parts of a program. Even though Rails comes with its own set of tools and settings, you're certainly not limited to library of rails commands and configurations. Developers are free to configure their applications however they wish, though adopting conventions is certainly recommended.
+Rails heavily emphasizes **_"Convention over Configuration."_** This means that a programmer only needs to specify and code out the non-standard parts of a program. Even though Rails comes with its own set of tools and settings, you're certainly not limited to library of rails commands and configurations. Developers are free to configure their applications however they wish, though adopting conventions is certainly recommended.
 
- ![](https://s3-us-west-2.amazonaws.com/student-resources/uploads/lecture/Screen+Shot+2017-06-09+at+10.04.20+AM.png)
+![](https://s3-us-west-2.amazonaws.com/student-resources/uploads/lecture/Screen+Shot+2017-06-09+at+10.04.20+AM.png)
 
 #### A Look Back
 
@@ -48,14 +40,12 @@ As we look back at the history of Rails, let's review some of the more significa
 * Rails 3.0 (Aug 2010) - New query engine, new router for controller, mailer controller, CRSF protection
 * Rails 3.1 (Aug 2011) - jQuery, SASS, CoffeeScript, Sprockets with Assets Pipeline
 * Rails 3.2 (Jan 2012) - Journey routing engine, faster development mode, automatic query explains, tagged loggin for multi-user application
-* Rails 4.0 (June 2013) -  Rails 4.2: Active Job, Asynchronous Mails, Adequate Record, Web Console, Foreign Keys.
+* Rails 4.0 (June 2013) - Rails 4.2: Active Job, Asynchronous Mails, Adequate Record, Web Console, Foreign Keys.
 * Rails 5.0 (June 2016) - Notable additions in Rails 5.0 include an option for an API-only application suitable for use as a backend to JavaScript or mobile applications. Also Action Cable for live features such as chat and notifications.
-
 
 Over the years, Rails has indeed made it easier for beginners to dive into web development and build large complex applications. Some popular websites built on Rails include Twitter (at one point), GitHub and, of course, 37signals' very own Basecamp. Although it has often been criticized for performance and bloat, Rails continues its iterations with an ever-growing developer community and a vibrant ecosystem.
 
 [Built With Rails](https://skillcrush.com/2015/02/02/37-rails-sites/)
-
 
 ## Demo: A store in 10 mins (10 mins)
 
@@ -73,7 +63,6 @@ rails server
 
 Now we'll head over to `localhost:3000/items`. All of our REST actions are live!
 
-
 ## Codealong: Installing Rails (5 mins)
 
 #### Let's install rails
@@ -88,7 +77,6 @@ Versions of Rails change quite rapidly, and if you leave off the "-v", you'll ju
   gem install rails -v=INSERT_RAILS_VERSION_HERE
 ```
 
-
 Rails follow a pattern called **"convention over configuration"** - this means that by default, a Rails app expects you to follow specific patterns and folder structures. This means you need to learn these conventions, but also means that once you learn them, you save time by not having to setup a lot of the configuration you'd otherwise need to set up manually.
 
 This structure may look a bit complex – there a lot of files, specific naming conventions, and some nested files and folders. We generally don't create this structure manually, but instead use the Rails command line tool, which initializes the app for us:
@@ -97,9 +85,9 @@ This structure may look a bit complex – there a lot of files, specific naming 
   rails new grocery_store
 ```
 
-> **Note:** By default, if you *do not* add any option for the database, Rails will create the app with SQLite3. While you are working in a local development environment (localhost), you won't notice much of a difference between SQLite3 and PostgreSQL.
+> **Note:** By default, if you _do not_ add any option for the database, Rails will create the app with SQLite3. While you are working in a local development environment (localhost), you won't notice much of a difference between SQLite3 and PostgreSQL.
 
-> Once your app is in production on a remote server, you will *not* use SQLite, and they will often use PostgreSQL. A best practice in web development is to keep development and production environments as similar as possible, so we recommend using PostgreSQL from the start.
+> Once your app is in production on a remote server, you will _not_ use SQLite, and they will often use PostgreSQL. A best practice in web development is to keep development and production environments as similar as possible, so we recommend using PostgreSQL from the start.
 
 Now, let's go into the grocery_store folder:
 
@@ -135,7 +123,6 @@ We will describe the other folders in later lessons, and for the next couple of 
 As you know, a "route" is a combination of **the path** that was requested and **the HTTP verb** that was used to request that path.
 
 ```
-
                                           -----> Model <----> DB
                                          |         |
             response        request      |         |
@@ -144,11 +131,9 @@ As you know, a "route" is a combination of **the path** that was requested and *
                              PUT         |
                              POST         -----> view <----> html/images/css/js
                              DELETE
-
 ```
 
 When we've used Sinatra, we were managing the routes and the code executed for a specific route in the same place:
-
 
 ```ruby
 	get "/items" do
@@ -168,7 +153,7 @@ end
 
 Everything between the `do` and the `end` will be code related to handling routes for the current application.
 
-Later on in this lesson, we will add some content in this file, and  in a later lesson, we will go into detail about handling routes inside a Rails application.
+Later on in this lesson, we will add some content in this file, and in a later lesson, we will go into detail about handling routes inside a Rails application.
 
 #### Generate a controller
 
@@ -178,16 +163,16 @@ In Rails, the controllers are files inside the folder `app/controllers`. If you 
 
 There is 3 different ways for creating a controller in Rails:
 
-1. We can manually create a file and write the ruby code inside it.
-2. We can use a generator called `controller`, using `rails g controller CONTROLLER_NAME [ACTIONS]`. For instance, if we want to create a controller for the resource `items` with an action and a view for `index` and `show`, we would type in the console `rails g controller items index show`. This command would create a bunch of files and modify some others:
+1.  We can manually create a file and write the ruby code inside it.
+2.  We can use a generator called `controller`, using `rails g controller CONTROLLER_NAME [ACTIONS]`. For instance, if we want to create a controller for the resource `items` with an action and a view for `index` and `show`, we would type in the console `rails g controller items index show`. This command would create a bunch of files and modify some others:
 
-   * The controller itself, `items_controller.rb` inside `app/controllers`
-   * The views for each method , in this case
-     * `app/views/index.html.erb`
-     * `app/views/show.html.erb`
-   **NOTE** You still need to add your routes manually to the routes.rb file. The ones that are generated for you are not going to work.
+    * The controller itself, `items_controller.rb` inside `app/controllers`
+    * The views for each method , in this case
+      * `app/views/index.html.erb`
+      * `app/views/show.html.erb`
+        **NOTE** You still need to add your routes manually to the routes.rb file. The ones that are generated for you are not going to work.
 
-3. We can use the `scaffold_controller` generator. This generator will create the same files as the previous generator but with a REST logic for views, controller and views.
+3.  We can use the `scaffold_controller` generator. This generator will create the same files as the previous generator but with a REST logic for views, controller and views.
 
 #### Create methods for a RESTful controller
 
@@ -206,9 +191,7 @@ As a reminder, a RESTful resource will include 7 methods:
 Rails has a generator called `scaffold` that will create the whole MVC structure for a resource, let's say that inside the grocery_store app, we want the `Item` resource to have a name and a category field, we would type:
 
 ```ruby
-
 rails g scaffold Item name:string category:string
-
 ```
 
 Running this command will generate a lot of files, including the controller, the views, the model, and the migration. It will also update the routes file.
@@ -218,14 +201,10 @@ Take a look at the controller, it has all the RESTful methods, and these methods
 We don't want all the files created with the scaffold and in practice you won't actually use it so let's delete it
 
 ```ruby
-
 rails d scaffold Item
-
 ```
 
 Let's go ahead and generate a new items controller.
-
-
 
 #### Create Views
 
@@ -243,9 +222,7 @@ get "/items/about", to: 'items#about'
 
 If there is a file `about.html.erb` in `app/views/items`, this file will be automatically rendered when you call `localhost:3000/items/about`
 
-
 #### Implicit vs Explicit Rendering
-
 
 Thanks to Rails conventions, we do not need to specify the view file to render in our controller. This is known as implicit rendering
 
@@ -254,7 +231,6 @@ In app/controllers/items
 ```ruby
   def index
   end
-
 ```
 
 However, if we wanted to be more explicit or if we wanted to render a view template that does not correspond with the action name we could do the following:
@@ -264,7 +240,6 @@ However, if we wanted to be more explicit or if we wanted to render a view templ
     render 'foods'
     # This will render foods.html.erb
   end
-
 ```
 
 #### Generate a model
@@ -293,7 +268,6 @@ class AddBrandToItem < ActiveRecord::Migration[5.1]
     add_column :items, :brand, :string
   end
 end
-
 ```
 
 #### Conclusion
